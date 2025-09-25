@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BalanceUP.Pages.LoginPage">
+    <Grid Padding="20">
+        <!-- Define the rows of the grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Top space -->
+            <RowDefinition Height="Auto" />
+            <!-- Title -->
+            <RowDefinition Height="Auto" />
+            <!-- Logo -->
+            <RowDefinition Height="Auto" />
+            <!-- Username -->
+            <RowDefinition Height="Auto" />
+            <!-- Password -->
+            <RowDefinition Height="Auto" />
+            <!-- Login Button -->
+            <RowDefinition Height="Auto" />
+            <!-- Remember Me Checkbox -->
+            <RowDefinition Height="*" />
+            <!-- Bottom space -->
+            <RowDefinition Height="Auto" />
+            <!-- Sign Up Prompt -->
+        </Grid.RowDefinitions>
+        <!-- Title -->
+        <Label Text="Plan Your Budget With" 
+               FontSize="18" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,30" 
+               Grid.Row="1"/>
+        <!-- Logo -->
+        <Image Source="balanceup.png" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               WidthRequest="300"
+               HeightRequest="100" 
+               Grid.Row="2" />
+        <!-- Username -->
+        <Entry x:Name="entryUsername" 
+               Placeholder="Username" 
+               WidthRequest="250" 
+               Margin="0,0,0,15" 
+               Grid.Row="3"/>
+        <!-- Password with show/hide toggle -->
+        <Grid Grid.Row="4" Margin="0,0,0,15">
+            <Entry x:Name="entryPassword" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   WidthRequest="250" />
+            <Label x:Name="passwordToggle"
+                   Text="Show"
+                   TextColor="Gray"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Margin="0,0,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPasswordToggleTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <!-- Login Button -->
+        <Button Text="Login" 
+                Clicked="OnLoginButtonClicked" 
+                WidthRequest="250" 
+                Margin="0,0,0,10" 
+                Grid.Row="5" 
+                BackgroundColor="#89CFF0" 
+                TextColor="White"/>
+        <!-- Remember Me Checkbox -->
+        <HorizontalStackLayout HorizontalOptions="Center" Margin="0,5" Grid.Row="6">
+            <CheckBox x:Name="rememberMeCheckBox" 
+                      Color="#89CFF0" />
+            <Label Text="Remember Me" 
+                   VerticalOptions="Center" />
+        </HorizontalStackLayout>
+        <!-- Sign Up Prompt -->
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End" Grid.Row="7">
+            <Label Text="Don't have an account?" 
+                   VerticalOptions="Center" />
+            <Label Text="Sign Up" 
+                   TextColor="#89CFF0" 
+                   VerticalOptions="Center" 
+                   Margin="5,0,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignUpTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

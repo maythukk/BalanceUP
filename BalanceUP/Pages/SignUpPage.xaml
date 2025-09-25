@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BalanceUP.Pages.SignUpPage"
+             Title="Sign Up">
+    <Grid Padding="20">
+        <!-- Define the rows of the grid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <!-- Top space-->
+            <RowDefinition Height="Auto" />
+            <!-- Title -->
+            <RowDefinition Height="Auto" />
+            <!-- Username -->
+            <RowDefinition Height="Auto" />
+            <!-- Email -->
+            <RowDefinition Height="Auto" />
+            <!-- Password -->
+            <RowDefinition Height="Auto" />
+            <!-- Confirm Password -->
+            <RowDefinition Height="Auto" />
+            <!-- Create Account Button -->
+            <RowDefinition Height="*" />
+            <!-- Bottom space -->
+            <RowDefinition Height="Auto" />
+            <!-- Sign In Prompt -->
+        </Grid.RowDefinitions>
+        <!-- Title -->
+        <Label Text="Sign Up" 
+               FontSize="24" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,30" 
+               Grid.Row="1" />
+        <!-- Username -->
+        <Entry x:Name="entryUsername" 
+               Placeholder="Username" 
+               WidthRequest="250" 
+               Margin="0,0,0,15" 
+               Grid.Row="2" />
+        <!-- Email -->
+        <Entry x:Name="entryEmail" 
+               Placeholder="Email" 
+               WidthRequest="250" 
+               Margin="0,0,0,15" 
+               Grid.Row="3" />
+        <!-- Password -->
+        <Grid Grid.Row="4" Margin="0,0,0,15">
+            <Entry x:Name="entryPassword" 
+                   Placeholder="Password" 
+                   IsPassword="True" 
+                   WidthRequest="250" />
+            <Label x:Name="passwordToggle"
+                   Text="Show"
+                   TextColor="Gray"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Margin="0,0,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnPasswordToggleTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <!-- Confirm Password -->
+        <Grid Grid.Row="5" Margin="0,0,0,15">
+            <Entry x:Name="entryConfirmPassword" 
+                   Placeholder="Confirm Password" 
+                   IsPassword="True" 
+                   WidthRequest="250" />
+            <Label x:Name="confirmPasswordToggle"
+                   Text="Show"
+                   TextColor="Gray"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Margin="0,0,10,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnConfirmPasswordToggleTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <!-- Create Account Button -->
+        <Button Text="Create Account" 
+                Clicked="OnCreateAccountClicked" 
+                WidthRequest="250" 
+                Margin="0,0,0,10" 
+                Grid.Row="6" 
+                BackgroundColor="#89CFF0" 
+                TextColor="White" />
+        <!-- Sign In Prompt -->
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End" Grid.Row="7">
+            <Label Text="Already have an account?" VerticalOptions="Center" />
+            <Label Text="Sign In" 
+                   TextColor="#89CFF0" 
+                   VerticalOptions="Center" 
+                   Margin="5,0,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignInTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

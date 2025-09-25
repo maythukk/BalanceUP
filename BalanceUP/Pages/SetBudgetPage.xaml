@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BalanceUP.Pages.SetBudgetPage"
+             Title="Set Budget">
+
+    <ScrollView VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+        <StackLayout Padding="20" 
+                     VerticalOptions="Center" 
+                     HorizontalOptions="Center" 
+                     Spacing="15">
+
+            <!-- Amount Label -->
+            <Label Text="Set Your Budget" 
+                   FontSize="20" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" />
+
+            <!-- Entry for Amount -->
+            <Entry x:Name="entryAmount" 
+                   Placeholder="Enter your budget amount" 
+                   Keyboard="Numeric" 
+                   HorizontalOptions="Center" 
+                   WidthRequest="200" />
+
+            <!-- Warning Message Box -->
+            <Frame CornerRadius="10" 
+                   BorderColor="Red" 
+                   BackgroundColor="LightCoral" 
+                   Padding="10" HorizontalOptions="Center" 
+                   WidthRequest="300">
+                <Label Text="Note: You can set the budget only one time in a month." 
+                       TextColor="White" 
+                       HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- Space -->
+            <BoxView HeightRequest="15" BackgroundColor="Transparent"/>
+
+            <!-- Save Button -->
+            <Button Text="Save" 
+                    BackgroundColor="SkyBlue" 
+                    TextColor="White" 
+                    CornerRadius="10" 
+                    WidthRequest="200" 
+                    HorizontalOptions="Center" 
+                    Clicked="OnSaveClicked" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

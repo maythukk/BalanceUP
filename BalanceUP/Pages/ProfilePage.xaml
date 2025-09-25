@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BalanceUP.Pages.ProfilePage"
+             Title="Profile">
+    <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+        <!-- Profile Pic Placeholder -->
+        <Frame WidthRequest="200" 
+               HeightRequest="200" 
+               CornerRadius="100" 
+               HasShadow="True"
+               HorizontalOptions="Center"
+               Padding="0">
+            <Image x:Name="ProfileImage" 
+                   Source="profile.svg" 
+                   Aspect="AspectFill">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileImageTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+        </Frame>
+
+        <!-- Username -->
+        <Label x:Name="UsernameLabel" 
+               Text="Username" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnUsernameTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <!-- Email -->
+        <Label x:Name="EmailLabel" 
+               Text="user@example.com" 
+               FontSize="16"
+               TextColor="Gray"
+               HorizontalOptions="Center" />
+
+        <!-- Change Password Button -->
+        <Button Text="Change Password" 
+        WidthRequest="150"
+        BackgroundColor="#89CFF0" 
+        TextColor="White" 
+        Clicked="OnChangePasswordClicked" />
+
+        <!-- Logout Button -->
+        <Button Text="Logout" 
+                WidthRequest="150"
+                BackgroundColor="#89CFF0" 
+                TextColor="White" 
+                Clicked="OnLogoutClicked" />
+    </StackLayout>
+</ContentPage>
